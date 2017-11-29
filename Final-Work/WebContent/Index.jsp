@@ -7,12 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-----------------
-首页
-----------------
-<form>
-	<a href="Login.jsp"><input type="button" value="登陆"></a>
-	<a href="Register.jsp"><input type="button" value="注册"></a>
-</form>
+	<form action="/shop/loginuser/login" method="post">
+		账号：<input type="text" name="loginName" /><br>
+		密码：<input type="password" name="password" /><br>
+		${errorinfo }
+		<input type="submit" value="登录" />
+	
+	</form>
 </body>
 </html>
