@@ -1,4 +1,5 @@
 package com.shop.entity;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -10,7 +11,7 @@ public class LoginUser {
 	@Id
 	private String loginName;
 	private String password;
-	private String email;
+	private String realName;
 	public String getLoginName() {
 		return loginName;
 	}
@@ -23,12 +24,11 @@ public class LoginUser {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getEmail() {
-		return email;
+	public String getRealName() {
+		return realName;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setRealName(String realName) {
+		this.realName = realName;
 	}
-	
-	
+
 }

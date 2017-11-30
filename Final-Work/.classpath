@@ -36,5 +36,10 @@
 	<classpathentry kind="lib" path="D:/课程/大数据/Spring/spring-4.3.7/spring-4.3.7/spring-webmvc-4.3.7.RELEASE.jar"/>
 	<classpathentry kind="lib" path="D:/课程/大数据/Spring/spring-4.3.7/spring-4.3.7/spring-webmvc-portlet-4.3.7.RELEASE.jar"/>
 	<classpathentry kind="lib" path="D:/课程/大数据/Spring/spring-4.3.7/spring-4.3.7/spring-websocket-4.3.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Java/jarbao/validation-api-1.1.0.Final-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Java/code2/SH2/WebContent/WEB-INF/lib/hibernate-validator-5.4.1.Final.jar"/>
+	<classpathentry kind="lib" path="D:/Java/code2/Final-Work-01/WebContent/WEB-INF/lib/dom4j-1.6.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/CH01-02/lib/hibernate5.2.10/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/SH2/WebContent/WEB-INF/lib/validation-api-1.1.0.Final.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

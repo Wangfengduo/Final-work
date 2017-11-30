@@ -6,23 +6,24 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.shop.entity.LoginUser;
-import com.shop.user.dao.LoginDaoImpl;
+import com.shop.user.dao.LoginUserDaoImpl;
 
 @Service
 @Transactional(readOnly=true)
-public class LoginServiceImpl {
-	@Resource
-	private LoginDaoImpl loginDaoImpl;
+public class LoginUserServiceImpl {
 	
-	public LoginUser login(String name,String pwd) {
-		LoginUser lu=this.loginDaoImpl.findById(name);
-		if(lu !=null) {
-			if(lu.getPassword().equals(pwd)) {
+	@Resource
+	private LoginUserDaoImpl loginUserDaoImpl;
+	
+	public LoginUser login(String name, String pwd){
+		LoginUser lu=this.loginUserDaoImpl.findById(name);
+		if(lu!=null){
+			if(lu.getPassword().equals(pwd)){
 				return lu;
-			}else {
+			}else{
 				return null;
 			}
-		}else {
+		}else{
 			return null;
 		}
 	}
