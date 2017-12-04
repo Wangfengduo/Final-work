@@ -13,7 +13,7 @@ import com.shop.entity.RegisterUser;
 
 
 @Controller
-@RequestMapping("/registeruser")
+@RequestMapping("/user")
 public class RegisterUserController {
 	@RequestMapping(value="/register",method=RequestMethod.GET)
 	public String toRegister(Model model) {

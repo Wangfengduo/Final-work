@@ -12,7 +12,7 @@ import com.shop.entity.LoginUser;
 import com.shop.user.service.LoginUserServiceImpl;
 
 @Controller
-@RequestMapping("/loginuser")
+@RequestMapping("/user")
 public class LoginUserController {
 	@Resource
 	private LoginUserServiceImpl LoginUserServiceImpl;
@@ -27,7 +27,7 @@ public class LoginUserController {
 			return "main";
 		}else{
 			model.addAttribute("errorinfo", "您的账号密码不正确！");
-			return "index";
+			return "login";
 		}
 	}
 

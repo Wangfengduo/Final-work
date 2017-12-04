@@ -8,10 +8,12 @@ import javax.persistence.Table;
 @Table(name="loginuser")
 public class LoginUser {
 	
-	@Id
+	
 	private String loginName;
 	private String password;
 	private String realName;
+	
+	@Id
 	public String getLoginName() {
 		return loginName;
 	}
