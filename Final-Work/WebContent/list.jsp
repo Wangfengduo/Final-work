@@ -17,8 +17,7 @@
 		<td><input type="checkbox" name="pid" value="${p.id }" /></td>
 		<td>${p.name }</td><td>${p.img}</td><td>${p.description}</td><td>${p.price }</td><td>${p.producttypeid }</td>
 		<td>
-			<a href="${ctx}/product/edit?pid=${p.id }">修改</a>
-			<a href="${ctx}/product/delete?pid=${p.id }">删除</a>
+			<a href="addShoppingCart?ProductName=${p.name}&ProductPrice=${p.price}">加入购物车</a>
 		</td>
 		</tr>
 	</c:forEach>
