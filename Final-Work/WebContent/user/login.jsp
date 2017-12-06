@@ -151,7 +151,7 @@
 			<div class="col-sm-6">
 				<h3>创建一个账户</h3>
 				<p>我想创建一个新帐户。</p>
-			<a href="Register.jsp" class="btn btn-primary">创建一个新账户</a>
+			<a href="register.jsp" class="btn btn-primary">创建一个新账户</a>
 
 			</div>
 		</div>				

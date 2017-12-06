@@ -6,10 +6,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<script src="ajaxYz.js" type="text/javascript"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Shops | The Bootstrap Themes</title>
+
+<script src="ajaxYz.js" type="text/javascript"></script>
 
 <!-- Google fonts -->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -131,7 +132,7 @@
 				<div class="form-group">
 				<label for="inputEmail3" class="col-sm-4 control-label">用户名</label>
 				<div class="col-sm-8">
-					<input type="text" class="form-control" name="username" id="userName"><span id="userNamets"></span>
+					<input type="text" name="userName" id="userName" class="form-control"><span id="userNamets"></span>
 				</div>				
 				</div>	
 				
@@ -151,14 +152,14 @@
 				<div class="form-group">
 				<label for="inputEmail3" class="col-sm-4 control-label">密码</label>
 				<div class="col-sm-8">
-				<input type="password" class="form-control" name="password" id="passWord"><span id="passWordts"></span>
+					<input type="password" name="passWord" id="passWord" class="form-control"><span id="passWordts"></span>
 				</div>				
 				</div>
 				
 				<div class="form-group">
 				<label for="inputEmail3" class="col-sm-4 control-label">确认密码</label>
 				<div class="col-sm-8">
-				<input type="password" class="form-control"name="qrPassWord" id="qrPassWord"><span id="qrPassWordts"></span>
+					<input type="password" name="qrPassWord" id="qrPassWord" class="form-control"><span id="qrPassWordts"></span>
 				</div>				
 				</div>
 

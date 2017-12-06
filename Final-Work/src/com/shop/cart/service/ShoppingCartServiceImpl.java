@@ -6,10 +6,12 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.stereotype.Service;
+
 import com.shop.entity.Product;
 
 
-
+@Service
 public class ShoppingCartServiceImpl {
 	public boolean showShoppingCart(HttpSession session) {
 		@SuppressWarnings("unchecked")

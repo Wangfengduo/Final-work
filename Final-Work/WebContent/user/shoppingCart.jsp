@@ -145,7 +145,7 @@
 						<input type="button" class="plus btn" value="+" />
 					</div>
 		          	</td>
-		          	<td><a href="clearSomeone.controller?name=${pd.name}" class="continue">删除</a></td>
+		          	<td><a href="clearSomeone.action?name=${pd.name}" class="continue">删除</a></td>
 		          </tr>
 		          </c:forEach>
 		          <tr>
@@ -157,7 +157,7 @@
 		        </form></br>
 		        <form align="center">
 		        	<a href="product"><input type="button" value="继续购物"></a>
-		        	<a href="clearshoppingCart"><input type="button" value="清空购物车"></a>
+		        	<a href="/clearshoppingCart"><input type="button" value="清空购物车"></a>
 		        	
 		        </form>
 		        </div>
