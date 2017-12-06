@@ -1,18 +1,17 @@
 package com.shop.product.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
 import com.shop.entity.Product;
+
 
 @Repository
 public class ProductDaoImpl {
@@ -20,71 +19,42 @@ public class ProductDaoImpl {
 	@Resource
 	private SessionFactory sessionFactory;
 	
+	//添加商品
 	public void saveProduct(Product p) {
 		this.sessionFactory.getCurrentSession().save(p);
 	}
 	
+	//查询商品
+	public Product findById(int id) {
+		Product pd=this.sessionFactory.getCurrentSession().get(Product.class,id);
+		return pd;
+	}
+	//查询所有
+	@SuppressWarnings("unchecked")
 	public List<Product> findAll(){
-		try{
-			List<Product> list=new ArrayList<Product>();
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/mytest_db?useUnicode=true&characterEncoding=UTF-8","root","");
-			PreparedStatement pstm=con.prepareStatement("select * from product");
-			ResultSet rs=pstm.executeQuery();
-			while(rs.next()){
-				Product p=new Product();
-				p.setId(rs.getInt("id"));
-				p.setName(rs.getString("name"));
-				p.setImg(rs.getString("img"));
-				p.setDescription(rs.getString("description"));
-				p.setPrice(rs.getInt("price"));
-				p.setProductTypeId(rs.getInt("productTypeId"));
-				list.add(p);
-			}
-			con.close();
-			return list;
-		}catch(Exception e){
-			e.printStackTrace();
-			return null;
-		}
+		Query query = sessionFactory.getCurrentSession().createQuery("from Product");
+		List<Product> list = query.list();  
+        return list;  
 	}
 	
-
+	//删除商品
 	public void delProduct(int id) {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/mytest_db?useUnicode=true&characterEncoding=UTF-8","root","");
-			PreparedStatement pstm=con.prepareStatement("delete from product where id=?");
-			pstm.setInt(1, id);
-			pstm.executeUpdate();
-		}catch(Exception e){
-			e.printStackTrace();
-		}
+		this.sessionFactory.getCurrentSession().createQuery("delete product pd where pd.id="+id).executeUpdate();
 	}
 	
-	
-	public void findById(int id) {
-		 try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/mytest_db?useUnicode=true&characterEncoding=UTF-8","root","");
-			PreparedStatement pstm=con.prepareStatement("select * from product where id=?");
-			pstm.setInt(1, id);
-			ResultSet rs=pstm.executeQuery();
-			Product p=new Product();
-			while(rs.next()) {
-				p.setId(rs.getInt(1));
-				p.setName(rs.getString(2));
-				p.setImg(rs.getString(3));
-				p.setDescription(rs.getString(4));
-				p.setPrice(rs.getInt(5));
-				p.setProductTypeId(rs.getInt(6));
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	//修改商品
+	public void updateProduct(Product pd) {
+		Session session = sessionFactory.getCurrentSession();  
+        session.beginTransaction();
+        Query query = session.createQuery("update product pd set pd.name = ?,pd.img = ?,pd.description=?,pd.price = ?,pd.producttypeid=? where pd.id = ?");
+        query.setParameter(0, pd.getName());
+        query.setParameter(1, pd.getImg());
+        query.setParameter(2, pd.getPrice());
+        query.setParameter(3, pd.getDescription());
+        query.setParameter(4, pd.getPrice());
+        query.setParameter(5, pd.getProductTypeId());
+        session.getTransaction().commit();  
 	}
-	
-	
 	
 	
 }

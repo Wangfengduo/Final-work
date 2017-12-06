@@ -6,6 +6,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<script src="ajaxYz.js" type="text/javascript"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Shops | The Bootstrap Themes</title>
@@ -57,7 +58,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <h1><a class="navbar-brand logo" href="index.jsp">时尚 </a></h1>
+      <h1><a class="navbar-brand logo" href="Index.jsp">时尚 </a></h1>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -67,17 +68,17 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">商品 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="collections.jsp">男士</a></li>
-            <li><a href="collections.jsp">女士</a></li>
-            <li><a href="collections.jsp">礼品</a></li>            
+            <li><a href="collections.html">男士</a></li>
+            <li><a href="collections.html">女士</a></li>
+            <li><a href="collections.html">礼品</a></li>            
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">页面 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="about.jsp">关于</a></li>
-            <li><a href="terms.jsp">Terms</a></li>
-            <li><a href="contact.jsp">Contact</a></li>            
+            <li><a href="about.html">关于</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="contact.html">Contact</a></li>            
           </ul>
         </li>
       </ul>
@@ -130,7 +131,7 @@
 				<div class="form-group">
 				<label for="inputEmail3" class="col-sm-4 control-label">用户名</label>
 				<div class="col-sm-8">
-				<input type="text" class="form-control" name="username" id="userName"><span id="userNamets"></span>
+					<input type="text" class="form-control" name="username" id="userName"><span id="userNamets"></span>
 				</div>				
 				</div>	
 				

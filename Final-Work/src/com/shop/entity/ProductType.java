@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="/producttype")
+@Table(name="producttype")
 public class ProductType {
 	@Id
 	private int id;

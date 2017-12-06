@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
 import com.shop.entity.RegisterUser;
 
 
@@ -18,7 +19,7 @@ public class RegisterUserController {
 	@RequestMapping(value="/register",method=RequestMethod.GET)
 	public String toRegister(Model model) {
 		model.addAttribute("user",new RegisterUser());
-		return "register";
+		return "login";
 	}
 	
 	@RequestMapping(value="/register",method=RequestMethod.POST)
@@ -29,7 +30,7 @@ public class RegisterUserController {
 			return "register";
 		}else{
 			session.setAttribute("user", user);
-			return "index";
+			return "login";
 		}
 	}
 }

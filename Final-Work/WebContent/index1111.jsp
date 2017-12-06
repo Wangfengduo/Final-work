@@ -85,7 +85,8 @@
         </div>
       </form>
       <ul class="nav navbar-nav">
-        <li><a><span class="glyphicon glyphicon-user"></span>${lu.realName }</a></li>
+        <li><a href="login.jsp" data-target="#login"><span class="glyphicon glyphicon-user"></span> 登录</a>
+        <li><a href="register.jsp" data-target="#login"><span class="glyphicon glyphicon-user"></span>  注册</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle cart" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span> 购物车 <span class="cart-counter">8</span> <span class="caret"></span></a>
           <div class="dropdown-menu mini-cart">
