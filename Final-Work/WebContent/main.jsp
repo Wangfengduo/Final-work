@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +56,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <h1><a class="navbar-brand logo" href="Index.jsp">时尚 </a></h1>
+      <h1><a class="navbar-brand logo" href="main.jsp">时尚 </a></h1>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -62,7 +64,7 @@
       
       <ul class="nav navbar-nav">        
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Collections <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">商品分类<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="collections.html">男士</a></li>
             <li><a href="collections.html">女士</a></li>
@@ -102,7 +104,7 @@
           </div>
 
           <div class="clearfix">
-          <a href="checkout.html" class="btn btn-primary">继续购物</a> <a href="checkout.html" class="btn btn-primary">结算</a>
+          <a href="checkout.html" class="btn btn-primary">继续购物</a> <a href="${ctx}/product/list" class="btn btn-primary">结算</a>
           </div>
 
           </div>
@@ -120,11 +122,11 @@
 <div class="hero-land clearfix">
         <div class="landing men-land">
         <img src="images/female.jpg"  class="img-responsive" alt="slide">
-        <div class="caption animated fadeInUp"><h1>女士商品</h1><a href="collections.html"><i class="fa fa-angle-right"></i></a></div>
+        <div class="caption animated fadeInUp"><h1>女士商品</h1><a href="${ctx}/product/list"><i class="fa fa-angle-right"></i></a></div>
         </div>
         <div class="landing women-land">
         <img src="images/male.jpg"  class="img-responsive" alt="slide">
-        <div class="caption  animated fadeInUp"><h1>男士商品</h1><a href="collections.html"><i class="fa fa-angle-right"></i></a></div>
+        <div class="caption  animated fadeInUp"><h1>男士商品</h1><a href="${ctx}/product/list"><i class="fa fa-angle-right"></i></a></div>
         </div>
 </div>
 <!-- hero landing -->
@@ -154,7 +156,7 @@
       <img src="images/1.jpg"  class="img-responsive" alt="slide">
       <div class="carousel-caption">
             <h2 class="animated slideInLeft">Check out our Wedding Collection</h2>        
-        <button class="btn btn-primary btn-lg" role="button">View all Products</button>
+        <button class="btn btn-primary btn-lg" role="button">查看所有产品</button>
       </div>
     </div>
     <div class="item slides">

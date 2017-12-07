@@ -106,7 +106,7 @@
           </div>
 
           <div class="clearfix">
-          <a href="checkout.jsp" class="btn btn-primary">继续购物</a> <a href="checkout.jsp" class="btn btn-primary">结算</a>
+          <a href="${pageContext.request.contextPath }/product/list" class="btn btn-primary">继续购物</a> <a href="checkout.jsp" class="btn btn-primary">结算</a>
           </div>
 
           </div>

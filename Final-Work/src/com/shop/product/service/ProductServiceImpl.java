@@ -12,7 +12,7 @@ import com.shop.product.dao.ProductDaoImpl;
 
 
 @Service
-@Transactional(readOnly=true)
+@Transactional(readOnly=false)
 public class ProductServiceImpl {
 	
 	@Resource
@@ -24,16 +24,17 @@ public class ProductServiceImpl {
 	}
 	
 	public List<Product> listProducts(){
-		return new ProductDaoImpl().findAll();
+		List<Product> list=this.productDaoImpl.findAll();
+		return  list;
 	}
 	
-	public void deleteProduct(int id) {
-		ProductDaoImpl pd=new ProductDaoImpl();
-		pd.delProduct(id);
+	public void deleteProduct(Product p) {
+		
+		this.productDaoImpl.delProduct(p);
 	}
 	
 	public void updateProduct(Product p) {
-		ProductDaoImpl pd=new ProductDaoImpl();
-		pd.updateProduct(p);
+		
+		this.productDaoImpl.updateProduct(p);
 	}
 }

@@ -17,10 +17,11 @@ public class ProductTypeDaoImpl {
 	@Resource
 	private SessionFactory sessionFactory;
 	
-	@SuppressWarnings("unchecked")
+	 @SuppressWarnings("unchecked")
 	public List<ProductType> findAll(){
-		Query query = sessionFactory.getCurrentSession().createQuery("from Producttype");  
-        List<ProductType> list = query.list();  
+		Query query = sessionFactory.getCurrentSession().createQuery("from ProductType");  
+       
+		List<ProductType> list = query.list();  
         return list;  
 	}
 }

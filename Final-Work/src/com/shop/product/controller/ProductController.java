@@ -27,13 +27,13 @@ public class ProductController {
 	public String toAdd(Model model) {
 		List<ProductType> list=this.productTypeServiceImpl.listTypes();
 		model.addAttribute("list", list);
-		return "";//新增产品
+		return "form";//新增产品
 	}
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST)
 	public String add(Product p){
 		this.productServiceImpl.addProduct(p);
-		return "redirect:/product/add";
+		return "redirect: add";
 	}
 	
 	@RequestMapping("/list")

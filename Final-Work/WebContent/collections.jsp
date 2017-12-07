@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:set var="ctx" value="${pageContext.request.contextPath}" />
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -18,22 +15,22 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 <!-- bootstrap -->
-<link rel="stylesheet" href="${ctx}/assets/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
 
 
 <!-- animate.css -->
-<link rel="stylesheet" href="${ctx}/assets/animate.css" />
+<link rel="stylesheet" href="assets/animate.css" />
 
 
 
 <!-- Owl Carousel Assets -->
-<link href="${ctx}/assets/owl-carousel/owl.carousel.css" rel="stylesheet">
+<link href="assets/owl-carousel/owl.carousel.css" rel="stylesheet">
 
-<link  href="${ctx }/assets/style.css" rel="stylesheet">
+<link  href="assets/style.css" rel="stylesheet">
 
 <!-- favicon -->
-<link rel="shortcut icon" href="${ctx}/images/favicon.png" type="image/x-icon">
-<link rel="icon" href="${ctx}/images/favicon.png" type="image/x-icon">
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
 
 
 </head>
@@ -87,8 +84,8 @@
         </div>
       </form>
       <ul class="nav navbar-nav">
-        <li><a href="${pageContext.request.contextPath}/login.jsp" data-target="#login"><span class="glyphicon glyphicon-user"></span> 登录</a>
-        <li><a href="${pageContext.request.contextPath}/register.jsp" data-target="#login"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+        <li><a href="Login.jsp" data-target="#login"><span class="glyphicon glyphicon-user"></span> 登录</a>
+        <li><a href="Register.jsp" data-target="#login"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle cart" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span> 购物车<span class="cart-counter">8</span> <span class="caret"></span></a>
           <div class="dropdown-menu mini-cart">
@@ -139,20 +136,61 @@
         <div class="breadcrumb"><a href="index.html">主页</a> / 商品</div>
         
        <div class="row">
-			<table border="1" align="center">
-				<tr><td></td><td>名称</td><td>图片</td><td>描述</td><td>价格</td><td>产品类型</td><td>操作</td></tr>
-				<c:forEach items="${list }" var="p">
-					<tr>
-					<td><input type="checkbox" name="pid" value="${p.id }" /></td>
-					<td>${p.name }</td><td>${p.img}</td><td>${p.description}</td><td>${p.price }</td><td>${p.producttypeid }</td>
-					<td>
-						<a href="${ctx }/addShoppingCart?ProductName=${p.name}&ProductPrice=${p.price}">加入购物车</a>
-					</td>
-					</tr>
-				</c:forEach>
-			</table>
-			
-				<div class="text-center">
+            <div class="col-sm-2 col-xs-6">
+                <div class="product">
+                            <a href="product.html"><img src="images/photos/6.jpg" class="img-responsive"></a>
+                            <div class="row title-price">
+                                <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
+                                <div class="col-md-4"><span>$ 200</span></div>
+                            </div>
+                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                </div>
+            </div>
+            <div class="col-sm-2 col-xs-6">
+                <div class="product">
+                            <a href="product.html"><img src="images/photos/5.jpg" class="img-responsive"></a>
+                            <div class="row title-price">
+                                <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
+                                <div class="col-md-4"><span>$ 200</span></div>
+                            </div>
+                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                </div>
+            </div>
+            <div class="col-sm-2 col-xs-6">
+                <div class="product">
+                            <a href="product.html"><img src="images/photos/4.jpg" class="img-responsive"></a>
+                            <div class="row title-price">
+                                <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
+                                <div class="col-md-4"><span>$ 200</span></div>
+                            </div>
+                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                </div>
+            </div>
+            <div class="col-sm-2 col-xs-6">
+                <div class="product">
+                            <a href="product.html"><img src="images/photos/3.jpg" class="img-responsive"></a>
+                            <div class="row title-price">
+                                <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
+                                <div class="col-md-4"><span>$ 200</span></div>
+                            </div>
+                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                </div>
+            </div>
+            <div class="col-sm-2 col-xs-6">
+                <div class="product">
+                            <a href="product.html"><img src="images/photos/2.jpg" class="img-responsive"></a>
+                            <div class="row title-price">
+                                <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
+                                <div class="col-md-4"><span>$ 200</span></div>
+                            </div>
+                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                </div>
+            </div>
+            
+            
+        </div>
+        
+                     <div class="text-center">
                      <ul class="pagination">
                      <li class="disabled"><a href="#">«</a></li>
                      <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
@@ -162,7 +200,7 @@
                      <li><a href="#">5</a></li>
                      <li><a href="#">»</a></li>
                      </ul>
-                  </div>
+                     </div>
 
 </div>
 <!-- collections -->

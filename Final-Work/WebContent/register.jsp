@@ -1,13 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
-
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Shops | The Bootstrap Themes</title>
+
+<script src="ajaxYz.js" type="text/javascript"></script>
 
 <!-- Google fonts -->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -18,24 +21,24 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 <!-- bootstrap -->
-<link rel="stylesheet" href="${ctx}/assets/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
 
 
 <!-- animate.css -->
-<link rel="stylesheet" href="${ctx}/assets/animate.css" />
+<link rel="stylesheet" href="assets/animate.css" />
 
 
 
 <!-- Owl Carousel Assets -->
-<link href="${ctx}/assets/owl-carousel/owl.carousel.css" rel="stylesheet">
+<link href="assets/owl-carousel/owl.carousel.css" rel="stylesheet">
 
-<link  href="${ctx }/assets/style.css" rel="stylesheet">
+<link  href="assets/style.css" rel="stylesheet">
 
 <!-- favicon -->
-<link rel="shortcut icon" href="${ctx}/images/favicon.png" type="image/x-icon">
-<link rel="icon" href="${ctx}/images/favicon.png" type="image/x-icon">
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
 
-
+<script src="ajaxYz.js" type="text/javascript"></script>
 </head>
 
 <body id="home">
@@ -56,7 +59,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <h1><a class="navbar-brand logo" href="index.html">时尚 </a></h1>
+      <h1><a class="navbar-brand logo" href="Index.jsp">时尚 </a></h1>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -87,8 +90,8 @@
         </div>
       </form>
       <ul class="nav navbar-nav">
-        <li><a href="${pageContext.request.contextPath}/login.jsp" data-target="#login"><span class="glyphicon glyphicon-user"></span> 登录</a>
-        <li><a href="${pageContext.request.contextPath}/register.jsp" data-target="#login"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+        <li><a href="login.jsp" data-target="#login"><span class="glyphicon glyphicon-user"></span> 登录</a>
+        <li><a href="register.jsp" data-target="#login"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle cart" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span> 购物车<span class="cart-counter">8</span> <span class="caret"></span></a>
           <div class="dropdown-menu mini-cart">
@@ -116,58 +119,70 @@
 </nav>
 </div>
 
+<div class="content inside-page register">
+		<h1 class="title">注册</h1>
+		<div class="breadcrumb"><a href="index.html">主页</a> / 注册</div>
 
-<div class="container">
-
-<!-- collections -->
-<div class="content inside-page collection">
-       
-       
-       <div class="pull-right sortby">
-       <select class="form-control">
-					<option>Order by A to Z</option>
-					<option>Order by Z to A</option>
-					<option>Order by Price</option>
-					<option>Order by Rating</option>					
-		</select>
-       </div>
+         <fieldset>
+		<div class="form-horizontal content-center">
 
 
+			<form:form action="${ctx}/user/register" method="post" id="form1" commandName="user">
+				
+				<div class="form-group">
+				<label for="inputEmail3" class="col-sm-4 control-label">用户名</label>
+				<div class="col-sm-8">
+					<input type="text" name="userName" id="userName" class="form-control"><span id="userNamets"></span>
+				</div>				
+				</div>	
+				
+				<div class="form-group">
+				<label for="inputEmail3" class="col-sm-4 control-label"></label>
+				<div class="col-sm-8">
+					<label class="radio-inline">
+					<input type="radio" name="inlineRadioOptions">先生 
+					</label>
+					<label class="radio-inline">
+					<input type="radio" name="inlineRadioOptions">女士
+					</label>
+				</div>
+				
+				</div>	
+				
+				<div class="form-group">
+				<label for="inputEmail3" class="col-sm-4 control-label">密码</label>
+				<div class="col-sm-8">
+					<input type="password" name="passWord" id="passWord" class="form-control"><span id="passWordts"></span>
+				</div>				
+				</div>
+				
+				<div class="form-group">
+				<label for="inputEmail3" class="col-sm-4 control-label">确认密码</label>
+				<div class="col-sm-8">
+					<input type="password" name="qrPassWord" id="qrPassWord" class="form-control"><span id="qrPassWordts"></span>
+				</div>				
+				</div>
 
-       <h2 class="title">Collections</h2>
+				<div class="form-group">
+				<label for="inputEmail3" class="col-sm-4 control-label">邮箱</label>
+				<div class="col-sm-8">
+				<input type="email" class="form-control" name="email">
+				</div>				
+				</div>
 
-        <div class="breadcrumb"><a href="index.html">主页</a> / 商品</div>
-        
-       <div class="row">
-			<table border="1" align="center">
-				<tr><td></td><td>名称</td><td>图片</td><td>描述</td><td>价格</td><td>产品类型</td><td>操作</td></tr>
-				<c:forEach items="${list }" var="p">
-					<tr>
-					<td><input type="checkbox" name="pid" value="${p.id }" /></td>
-					<td>${p.name }</td><td>${p.img}</td><td>${p.description}</td><td>${p.price }</td><td>${p.producttypeid }</td>
-					<td>
-						<a href="${ctx }/addShoppingCart?ProductName=${p.name}&ProductPrice=${p.price}">加入购物车</a>
-					</td>
-					</tr>
-				</c:forEach>
-			</table>
+				<div class="col-sm-8 col-sm-offset-4">
+					<input type="submit" value="注册" id="submitBtn" class="btn btn-primary pull-left">
+				</div>
+			</form:form>
 			
-				<div class="text-center">
-                     <ul class="pagination">
-                     <li class="disabled"><a href="#">«</a></li>
-                     <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-                     <li><a href="#">2</a></li>
-                     <li><a href="#">3</a></li>
-                     <li><a href="#">4</a></li>
-                     <li><a href="#">5</a></li>
-                     <li><a href="#">»</a></li>
-                     </ul>
-                  </div>
+		</div> 	
+		</fieldset>
+	</div>
 
-</div>
-<!-- collections -->
 
-</div>
+
+
+
 <footer>
    <div class="container">
             <div class="row">
@@ -240,6 +255,5 @@
 
 <!-- custom script -->
 <script src="assets/script.js"></script>
-
 </body>
 </html>

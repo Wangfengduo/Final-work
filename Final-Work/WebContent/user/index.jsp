@@ -62,11 +62,11 @@
       
       <ul class="nav navbar-nav">        
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Collections <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">商品 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="collections.html">男士</a></li>
-            <li><a href="collections.html">女士</a></li>
-            <li><a href="collections.html">礼品</a></li>            
+            <li><a href="${pageContext.request.contextPath }/user/product/list">男士</a></li>
+            <li><a href="${pageContext.request.contextPath }/product/list">女士</a></li>
+            <li><a href="${pageContext.request.contextPath }/product/list">礼品</a></li>            
           </ul>
         </li>
         <li class="dropdown">
@@ -121,11 +121,11 @@
 <div class="hero-land clearfix">
         <div class="landing men-land">
         <img src="images/female.jpg"  class="img-responsive" alt="slide">
-        <div class="caption animated fadeInUp"><h1>女士商品</h1><a href="collections.html"><i class="fa fa-angle-right"></i></a></div>
+        <div class="caption animated fadeInUp"><h1>女士商品</h1><a href="${pageContext.request.contextPath }/product/list"><i class="fa fa-angle-right"></i></a></div>
         </div>
         <div class="landing women-land">
         <img src="images/male.jpg"  class="img-responsive" alt="slide">
-        <div class="caption  animated fadeInUp"><h1>男士商品</h1><a href="collections.html"><i class="fa fa-angle-right"></i></a></div>
+        <div class="caption  animated fadeInUp"><h1>男士商品</h1><a href="${pageContext.request.contextPath }/product/list"><i class="fa fa-angle-right"></i></a></div>
         </div>
 </div>
 <!-- hero landing -->

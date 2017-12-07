@@ -6,7 +6,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.hibernate.Query;
-import org.hibernate.Session;
+
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
@@ -32,28 +32,36 @@ public class ProductDaoImpl {
 	//查询所有
 	@SuppressWarnings("unchecked")
 	public List<Product> findAll(){
-		Query query = sessionFactory.getCurrentSession().createQuery("from Product");
+		Query query = this.sessionFactory.getCurrentSession().createQuery("from Product");
+		
 		List<Product> list = query.list();  
         return list;  
 	}
 	
 	//删除商品
-	public void delProduct(int id) {
-		this.sessionFactory.getCurrentSession().createQuery("delete product pd where pd.id="+id).executeUpdate();
+	public void delProduct(Product p) {
+		//this.sessionFactory.getCurrentSession().createQuery("delete from Product pd where pd.id="+id).executeUpdate();
+		this.sessionFactory.getCurrentSession().delete(p);
 	}
 	
 	//修改商品
 	public void updateProduct(Product pd) {
-		Session session = sessionFactory.getCurrentSession();  
-        session.beginTransaction();
-        Query query = session.createQuery("update product pd set pd.name = ?,pd.img = ?,pd.description=?,pd.price = ?,pd.producttypeid=? where pd.id = ?");
-        query.setParameter(0, pd.getName());
-        query.setParameter(1, pd.getImg());
-        query.setParameter(2, pd.getPrice());
-        query.setParameter(3, pd.getDescription());
-        query.setParameter(4, pd.getPrice());
-        query.setParameter(5, pd.getProductTypeId());
-        session.getTransaction().commit();  
+		
+		Product p=this.sessionFactory.getCurrentSession().get(Product.class, pd.getId());
+		p.setName(pd.getName());
+		p.setPrice(pd.getPrice());
+		p.setDescription(pd.getDescription());
+		p.setImg(pd.getImg());
+		this.sessionFactory.getCurrentSession().update(pd);
+//        session.beginTransaction();
+//        Query query = session.createQuery("update product pd set pd.name = ?,pd.img = ?,pd.description=?,pd.price = ?,pd.producttypeid=? where pd.id = ?");
+//        query.setParameter(0, pd.getName());
+//        query.setParameter(1, pd.getImg());
+//        query.setParameter(2, pd.getPrice());
+//        query.setParameter(3, pd.getDescription());
+//        query.setParameter(4, pd.getPrice());
+//        query.setParameter(5, pd.getProductTypeId());
+//        session.getTransaction().commit();  
 	}
 	
 	

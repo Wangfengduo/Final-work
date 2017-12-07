@@ -2,35 +2,46 @@ package com.shop.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="product")
 public class Product {
-	@Id
-	@Column(name="id")
-	private int id;
-	@Column(name="name")
-	private String name;
-	@Column(name="img")
-	private String img;
-	@Column(name="description")
-	private String description;
-	@Column(name="price")
-	private String price;
-	@Column(name="producttypeid")
-	private int productTypeId;
 	
-	public int getId() {
+	
+	private Integer id;
+	
+	private String name;
+
+	private String img;
+
+	private String description;
+	
+	private String price;
+	private Integer producttypeid;
+
+	
+	
+	
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
+	
+	
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -53,12 +64,11 @@ public class Product {
 	public void setPrice(String price) {
 		this.price = price;
 	}
-	public int getProductTypeId() {
-		return productTypeId;
+	public Integer getProducttypeid() {
+		return producttypeid;
 	}
-	public void setProductTypeId(int productTypeId) {
-		this.productTypeId = productTypeId;
+	public void setProducttypeid(Integer producttypeid) {
+		this.producttypeid = producttypeid;
 	}
-	
 	
 }
