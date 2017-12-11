@@ -1,60 +1,80 @@
 package com.shop.cart.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 
 import com.shop.cart.service.ShoppingCartServiceImpl;
+import com.shop.entity.Product;
+import com.shop.entity.ShoppingCart;
+import com.shop.product.service.ProductServiceImpl;
+
+
+
 
 @Controller
 public class ShoppingCartController {
-	@Autowired
+	
+	@Resource
+	private ProductServiceImpl productServiceImpl;
+	@Resource
 	private ShoppingCartServiceImpl shoppingCartServiceImpl;
 	
-	@RequestMapping("/user/shoppingCart")
-	//展示购物车
-	public String showShoppingCart(HttpSession session) {
-		boolean result=shoppingCartServiceImpl.showShoppingCart(session);
-		if(result) {
-			return "user/shoppingCart";
-		}
-		return "user/shoppingCart";
+	@RequestMapping(value="/shoppingcart")
+	public String shoppingcart() {
+		return "shoppingcart";
 	}
 	
-	@RequestMapping("/user/addshoppingCart")
-	//添加购物车
-	public String addshoppingCart(HttpSession session,HttpServletRequest request ) {
-		boolean result=shoppingCartServiceImpl.addShoppingCart(request, session);
-		
-		if(result) {
-			return "user/shoppingCart";
+	 @RequestMapping(value = "/addShoppingCart",method = RequestMethod.POST)
+	 public String add(ShoppingCart shoppingCart){
+			this.shoppingCartServiceImpl.addShoppingCart(shoppingCart);
+			return "redirect: add";
 		}
-		return "user/shoppingCart";
+	 
+	 @RequestMapping(value = "/addShoppingCart",method = RequestMethod.POST)
+	 public Map<String,Object> addShoppingCart(int productId,int counts){
+		 System.out.println("数量为"+counts);
+		 ShoppingCart shoppingCart=shoppingCartServiceImpl.getShoppingCart(productId);
+		 if(shoppingCart==null) {
+			 ShoppingCart shoppingCart1=new ShoppingCart();
+			 shoppingCart1.setProductId(productId);
+			 shoppingCart1.setCounts(counts);
+			 shoppingCart1.setProductPrice(shoppingCartServiceImpl.getShoppingCart(productId).getProductPrice()*counts);
+			 shoppingCartServiceImpl.addShoppingCart(shoppingCart1);
+			 
+		 }else {
+			 shoppingCart.setCounts(shoppingCart.getCounts()+counts);
+			 shoppingCart.setProductPrice(shoppingCartServiceImpl.getShoppingCart(productId).getProductPrice()*shoppingCart.getProductPrice());
+			 shoppingCartServiceImpl.updateShoppingCart(shoppingCart);
+		 }
+		 Map<String, Object> resultMap = new HashMap<String,Object>();
+		 resultMap.put("result","success");
+		 return resultMap;
+		 
+	 }
+	 
+	 @RequestMapping(value = "/deleteShoppingCart",method = RequestMethod.POST)
+	 public Map<String,Object> deleteShoppingCart(int productId){
+		 shoppingCartServiceImpl.deleteShoppingCart(productId);
+		 Map<String, Object> resultMap = new HashMap<String,Object>();
+		 resultMap.put("result","success");
+		 return resultMap;
+	 }
+	 
+	 
+	@RequestMapping(value = "/getShoppingCart",method = RequestMethod.POST)
+	public String list(Model model){
+		List<ShoppingCart> shoppingCartlist=this.shoppingCartServiceImpl.getAllShoppingCat();
+		model.addAttribute("shoppingCartlist", shoppingCartlist);
+		return "shoppingCart";//购物车列表
 	}
-	
-	@RequestMapping("/user/clearshoppingCart")
-	//删除
-	public String clearshoppingCart(HttpSession session) {
-		boolean result=shoppingCartServiceImpl.clearShoppingCart(session);
-		if (result) {
-			return "user/shoppingCart";
-		}
-		return "user/shoppingCart";
-	}
-	
-	
-	@RequestMapping("/user/clearsomeone")
-	//删除部分
-	public String clearSomeone(HttpServletRequest request,HttpSession session) {
-		boolean result=shoppingCartServiceImpl.clearSomeone(request,session);
-		if (result) {
-			return "user/shoppingCart";
-		}
-		return "user/shoppingCart";
-	}
-	
-	
+	 
 }

@@ -141,7 +141,7 @@
        <div class="row">
 			<table border="1" align="center">
 				<tr><td></td><td>名称</td><td>图片</td><td>描述</td><td>价格</td><td>产品类型</td><td>操作</td></tr>
-				<c:forEach items="${list }" var="p">
+				<c:forEach items="${list}" var="p">
 					<tr>
 					<td><input type="checkbox" name="pid" value="${p.id }" /></td>
 					<td>${p.name }</td><td>${p.img}</td><td>${p.description}</td><td>${p.price }</td><td>${p.producttypeid }</td>
