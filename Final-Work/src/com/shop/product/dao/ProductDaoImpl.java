@@ -53,15 +53,6 @@ public class ProductDaoImpl {
 		p.setDescription(pd.getDescription());
 		p.setImg(pd.getImg());
 		this.sessionFactory.getCurrentSession().update(pd);
-//        session.beginTransaction();
-//        Query query = session.createQuery("update product pd set pd.name = ?,pd.img = ?,pd.description=?,pd.price = ?,pd.producttypeid=? where pd.id = ?");
-//        query.setParameter(0, pd.getName());
-//        query.setParameter(1, pd.getImg());
-//        query.setParameter(2, pd.getPrice());
-//        query.setParameter(3, pd.getDescription());
-//        query.setParameter(4, pd.getPrice());
-//        query.setParameter(5, pd.getProductTypeId());
-//        session.getTransaction().commit();  
 	}
 	
 	

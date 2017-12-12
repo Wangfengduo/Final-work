@@ -145,7 +145,7 @@
 						<input type="button" class="plus btn" value="+" />
 					</div>
 		          	</td>
-		          	<td><a href="clearSomeone.action?name=${pd.name}" class="continue">删除</a></td>
+		          	<td><a href="${ctx}/clearSomeone?name=${pd.name}" class="continue">删除</a></td>
 		          </tr>
 		          </c:forEach>
 		          <tr>
