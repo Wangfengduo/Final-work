@@ -20,10 +20,11 @@ public class RegisterUser {
 	private String password;
 	@NotEmpty(message="邮箱不能为空！")
 	@Email(message="邮件格式不正确！")
-	private String email;
 	
 	private String realName;
-	
+	private String email;
+	private String telephone;
+	private String address;
 	
 	public String getRealName() {
 		return realName;
@@ -48,6 +49,18 @@ public class RegisterUser {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getTelephone() {
+		return telephone;
+	}
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	
 	

@@ -45,6 +45,7 @@
 
 
 
+
 <div class="header">
 <nav class="navbar  navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -118,58 +119,64 @@
 
 
 
-<div class="container">
-	<div class="content inside-page register">
-		<h1 class="title">购物车</h1>
-		<div class="breadcrumb"><a href="main.jsp">主页</a> / 我的购物车</div>
-		
-			<fieldset>
-		     <div class="form-horizontal content-center">
-		       <form action="${ctx}/order">
-		        <table class="cart_table" border="1px" align="center" style="
-				width: 502px;
-    			height: 152px;
-			">
-		          <tr class="cart_title"> 
-		            <td align="center">商品名</td>
-		            <td align="center">单价</td>
-		            <td align="center">数量</td>
-		            <td align="center">操作</td>
-		          </tr>
-		          <c:forEach items="${shoppingList}" var="pd">
-		          <tr>
-		          	<td align="center">${pd.name }</td>
-		          	<td align="center">¥${pd.price}</td>
-		          	<td align="center">
-		          	<div class="add-plus-input">
-						<input type="button" class="add_btn" value="-" />
-						<input type="text" class="num" name="number" value="1" size="1"/>
-						<input type="button" class="plus_btn" value="+" />
-					</div>
-		          	</td>
-		          	<td align="center"><a href="${ctx}/cart/deleteSomeone?name=${pd.name}" class="continue">删除</a></td>
-		          </tr>
-		          </c:forEach>
-		          
-		          <tr>
-					<td colspan="4" style="text-align: center;">
-						<a href="${ctx}/order"><input type="submit" value="生成订单"></a>
-					</td>
-				  </tr>
+
+	<div class="left_content">
+			<div class="title" style="
+				margin-left:20px;
+				padding-top:10px;
+			"><h1>我的购物车</h1></div>
+		      <div class="feat_prod_box_details" >
+		        <form action="" name="productForm" id="productForm">
+		        <table class="cart_table" border="1px" height="200px" width="40%" align="center">
+		       		<tr>
+		        		<td align="center">用户名</td>
+		        		<td colspan="3">${username }</td>
+		        		
+		        	</tr>
+		        	<tr>
+		        		<td align="center">电话</td>
+		        		<td colspan="3">${telephone }</td>
+		        		
+		        	</tr>
+		        	<tr>
+		        		<td align="center">地址</td>
+		        		<td colspan="3">${address}</td>
+		        		
+		        	</tr>
+		          	<tr>
+						<td align="center">商品名称</td>
+						<td align="center">单价</td>
+						<td align="center">数量</td>
+						<td align="center">总价格</td>
+				
+					</tr>
+					<c:set var="i" value="0"></c:set>
+					<c:set var="a" value="0"></c:set>
+					<c:forEach items="${list}" var="pd">
+						<tr>
+							<td align="center">${pd.name}</td>
+							<td align="center">￥${pd.price}</td>
+							<td align="center">${sessionScope.num[i] }</td>	
+				       	 	<td align="center">￥${sessionScope.num[i]*pd.price }</td>
+				        	<c:set var="a" value="${a+sessionScope.num[i]*pd.price}"></c:set>
+				        	<c:set var="i" value="${i+1 }"></c:set>
+						</tr>
+					</c:forEach>
+                    <tr>
+                        <td align="center"></td>
+                        <td align="center"></td>
+                        <td align="center"></td>
+                        <td align="center">总价格:￥${a}</td>
+                    </tr>
 		        </table>
-		        </form></br>
-		        <form align="center">
-		        	<a href="${pageContext.request.contextPath }/product/list"><input type="button" value="继续购物"></a>
-		        	<a href="${pageContext.request.contextPath }/cart/deleteshoppingCart""><input type="button" value="清空购物车"></a>
-		        	
 		        </form>
-		        </div>
-		        </fieldset>
+		        <br>
+		        <form align="center">
+		        	<a href="shoppingCart.jsp" class="continue">&lt; <input type="button" value="取消订单" class="btn btn-primary"></a>
+		        	<a href="${ctx}/addOrder" class="checkout"><input type="button" value="确认订单" class="btn btn-primary">&gt;</a> </div>
+		        </form>
 		      <div class="clear"></div>
 		</div>
-	</div>
-
-
 
 
 

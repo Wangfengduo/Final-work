@@ -9,12 +9,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name="producttype")
 public class ProductType {
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
 	public Integer getId() {
 		return id;
 	}

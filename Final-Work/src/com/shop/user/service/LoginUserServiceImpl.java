@@ -16,7 +16,7 @@ public class LoginUserServiceImpl {
 	private LoginUserDaoImpl loginUserDaoImpl;
 	
 	public LoginUser login(String name, String pwd){
-		LoginUser lu=this.loginUserDaoImpl.findById(name);
+		LoginUser lu=this.loginUserDaoImpl.findByName(name);
 		if(lu!=null){
 			if(lu.getPassword().equals(pwd)){
 				return lu;

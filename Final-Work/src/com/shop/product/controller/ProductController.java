@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.shop.entity.ProductType;
 import com.shop.product.service.ProductServiceImpl;
 import com.shop.producttype.service.ProductTypeServiceImpl;
+import com.shop.entity.LoginUser;
 import com.shop.entity.Product;
 
 @Controller

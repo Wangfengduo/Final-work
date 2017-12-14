@@ -1,18 +1,27 @@
 package com.shop.entity;
 
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+
+
 
 @Entity
 @Table(name="product")
 public class Product {
 	
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
 	private String name;
@@ -23,13 +32,18 @@ public class Product {
 	
 	private String price;
 	private Integer producttypeid;
+	
+	@ManyToMany
+	@JoinTable(name="order_detail", 
+	    joinColumns=@JoinColumn(name="product_id"),
+	    inverseJoinColumns=@JoinColumn(name="order_id"))
+	private Set<Order> orderSet = new HashSet<Order>();
 
 	
 	
 	
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
 	public Integer getId() {
 		return id;
 	}
@@ -70,5 +84,13 @@ public class Product {
 	public void setProducttypeid(Integer producttypeid) {
 		this.producttypeid = producttypeid;
 	}
+	public Set<Order> getOrderSet() {
+		return orderSet;
+	}
+	public void setOrderSet(Set<Order> orderSet) {
+		this.orderSet = orderSet;
+	}
+	
+	
 	
 }

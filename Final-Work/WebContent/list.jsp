@@ -87,8 +87,7 @@
         </div>
       </form>
       <ul class="nav navbar-nav">
-        <li><a href="${pageContext.request.contextPath}/login.jsp" data-target="#login"><span class="glyphicon glyphicon-user"></span> 登录</a>
-        <li><a href="${pageContext.request.contextPath}/register.jsp" data-target="#login"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+        <li><a><span class="glyphicon glyphicon-user"></span>${lu.realName }</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle cart" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span> 购物车<span class="cart-counter">8</span> <span class="caret"></span></a>
           <div class="dropdown-menu mini-cart">
@@ -139,14 +138,17 @@
         <div class="breadcrumb"><a href="index.html">主页</a> / 商品</div>
         
        <div class="row">
-			<table border="1" align="center">
-				<tr><td></td><td>名称</td><td>图片</td><td>描述</td><td>价格</td><td>产品类型</td><td>操作</td></tr>
+			<table border="1" align="center" style="
+				width: 502px;
+    			height: 152px;
+			">
+				<tr><td></td><td align="center">名称</td><td align="center">图片</td><td align="center">描述</td><td align="center">价格</td><td align="center">产品类型</td><td align="center">操作</td></tr>
 				<c:forEach items="${list}" var="p">
 					<tr>
-					<td><input type="checkbox" name="pid" value="${p.id }" /></td>
-					<td>${p.name }</td><td>${p.img}</td><td>${p.description}</td><td>${p.price }</td><td>${p.producttypeid }</td>
-					<td>
-						<a href="${ctx }/addshoppingCart?ProductName=${p.name}&ProductPrice=${p.price}">加入购物车</a>
+					<td align="center"><input type="checkbox" name="pid" value="${p.id }" /></td>
+					<td align="center">${p.name }</td><td align="center">${p.img}</td><td align="center">${p.description}</td><td align="center">${p.price }</td><td align="center">${p.producttypeid }</td>
+					<td align="center">
+						<a href="${ctx }/cart/addshoppingCart?ProductName=${p.name}&ProductPrice=${p.price}">加入购物车</a>
 					</td>
 					</tr>
 				</c:forEach>

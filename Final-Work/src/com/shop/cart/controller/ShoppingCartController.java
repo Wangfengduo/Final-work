@@ -1,21 +1,25 @@
 package com.shop.cart.controller;
 
 
-import javax.servlet.http.HttpServlet;
+
+
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.shop.cart.service.ShoppingCartServiceImpl;
 
 
+
 @Controller
+@RequestMapping("/cart")
 public class ShoppingCartController {
 	
-	@Autowired
+	@Resource
 	private ShoppingCartServiceImpl shoppingCartServiceImpl;
 	
 	@RequestMapping("/shoppingCart")
@@ -28,8 +32,8 @@ public class ShoppingCartController {
 	}
 	
 	@RequestMapping("/addshoppingCart")
-	public String addShoppingCart(HttpSession session,HttpServlet request) {
-		boolean result=shoppingCartServiceImpl.showShoppingCart(session);
+	public String addShoppingCart(HttpSession session,HttpServletRequest request) {
+		boolean result=shoppingCartServiceImpl.addShoppingCart(request, session);
 		if(result) {
 			return "shoppingCart";
 		}

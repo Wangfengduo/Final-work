@@ -6,7 +6,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.hibernate.Query;
-
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
@@ -53,6 +53,20 @@ public class ProductDaoImpl {
 		p.setDescription(pd.getDescription());
 		p.setImg(pd.getImg());
 		this.sessionFactory.getCurrentSession().update(pd);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public Product selectProduct(String name) {
+		Session session = sessionFactory.getCurrentSession();
+		String sql = "from Product pd where pd.name = ?";
+		Query query=session.createQuery(sql);
+		query.setParameter(0, name);
+		List<Product> list =query.list();
+		Product pd=null;
+		for(Product pd1:list) {
+			pd=pd1;
+		}
+		return pd;
 	}
 	
 	
