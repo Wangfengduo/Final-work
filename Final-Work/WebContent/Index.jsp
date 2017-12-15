@@ -71,12 +71,14 @@
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">页面 <span class="caret"></span></a>
+   
           <ul class="dropdown-menu" role="menu">
             <li><a href="about.html">关于</a></li>
             <li><a href="terms.html">Terms</a></li>
             <li><a href="contact.html">Contact</a></li>            
           </ul>
         </li>
+        <li><a href="${ctx}/admin/login.jsp">管理员登陆</a></li>    
       </ul>
       
       <form class="navbar-form navbar-left searchbar" role="search">

@@ -4,6 +4,10 @@ import java.util.List;
 
 
 
+import org.springframework.stereotype.Component;
+
+
+@Component
 public class Page<T> {
 	private List<Product> list;
 
