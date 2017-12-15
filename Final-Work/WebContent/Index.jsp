@@ -78,7 +78,7 @@
             <li><a href="contact.html">Contact</a></li>            
           </ul>
         </li>
-        <li><a href="${ctx}/admin/login.jsp">管理员登陆</a></li>    
+        <li><a href="../admin/login.jsp">管理员登陆</a></li>    
       </ul>
       
       <form class="navbar-form navbar-left searchbar" role="search">

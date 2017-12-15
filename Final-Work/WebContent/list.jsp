@@ -56,7 +56,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <h1><a class="navbar-brand logo" href="index.html">时尚 </a></h1>
+      <h1><a class="navbar-brand logo" href="../main.jsp">时尚 </a></h1>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

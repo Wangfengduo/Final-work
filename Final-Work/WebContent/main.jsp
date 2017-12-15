@@ -89,22 +89,11 @@
       <ul class="nav navbar-nav">
         <li><a><span class="glyphicon glyphicon-user"></span>${lu.realName }</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle cart" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span> 购物车 <span class="cart-counter">8</span> <span class="caret"></span></a>
+          <a href="${ctx}/shoppingCart" class="dropdown-toggle cart" data-toggle="dropdown"> 购物车 <span class="caret"></span></a>
           <div class="dropdown-menu mini-cart">
-          <div class="row product-list">
-            <div class="col-xs-3"><a href="#"><img src="images/photos/1.jpg" class="img-responsive" alt="product"></a></div>
-            <div class="col-xs-7"><a href="#">White V-neck Tshirt</a></div>
-            <div class="col-xs-1"><a href="#"><i class="fa fa-close"></i></a></div>
-          </div>
-
-          <div class="row product-list">
-            <div class="col-xs-3"><a href="#"><img src="images/photos/2.jpg" class="img-responsive" alt="product"></a></div>
-            <div class="col-xs-7"><a href="#">White V-neck Tshirt</a></div>
-            <div class="col-xs-1"><a href="#"><i class="fa fa-close"></i></a></div>
-          </div>
 
           <div class="clearfix">
-          <a href="checkout.html" class="btn btn-primary">继续购物</a> <a href="${ctx}/product/list" class="btn btn-primary">结算</a>
+          <a href="${ctx}/product/list" class="btn btn-primary">继续购物</a> <a href="${ctx}/product/list" class="btn btn-primary">结算</a>
           </div>
 
           </div>
@@ -202,15 +191,16 @@
                                 <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
                                 <div class="col-md-4"><span>$ 200</span></div>
                             </div>
-                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                            
+                            <a href="${ctx }/cart/shoppingCart" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
                     </div>
                     <div class="product">
-                            <a href="product.html"><img src="images/photos/2.jpg" class="img-responsive"></a>
+                            <a href="${ctx }/cart/shoppingCart"><img src="images/photos/2.jpg" class="img-responsive"></a>
                             <div class="row title-price">
                                 <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
                                 <div class="col-md-4"><span>$ 200</span></div>
                             </div>
-                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                            <a href="${ctx }/cart/shoppingCart" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
                     </div>
                     <div class="product">
                             <a href="product.html"><img src="images/photos/3.jpg" class="img-responsive"></a>
@@ -218,7 +208,7 @@
                                 <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
                                 <div class="col-md-4"><span>$ 200</span></div>
                             </div>
-                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                            <a href="${ctx }/cart/shoppingCart" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
                     </div>
                     <div class="product">
                             <a href="product.html"><img src="images/photos/4.jpg" class="img-responsive"></a>
@@ -226,7 +216,7 @@
                                 <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
                                 <div class="col-md-4"><span>$ 200</span></div>
                             </div>
-                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                            <a href="${ctx }/cart/shoppingCart" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
                     </div>
                     <div class="product">
                             <a href="product.html"><img src="images/photos/3.jpg" class="img-responsive"></a>
@@ -234,7 +224,7 @@
                                 <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
                                 <div class="col-md-4"><span>$ 200</span></div>
                             </div>
-                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                            <a href="${ctx }/cart/shoppingCart" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
                     </div>
                     <div class="product">
                             <a href="product.html"><img src="images/photos/1.jpg" class="img-responsive"></a>
@@ -242,7 +232,7 @@
                                 <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
                                 <div class="col-md-4"><span>$ 200</span></div>
                             </div>
-                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                            <a href="${ctx }/cart/shoppingCart" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
                     </div>
                     <div class="product">
                             <a href="product.html"><img src="images/photos/2.jpg" class="img-responsive"></a>
@@ -250,7 +240,7 @@
                                 <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
                                 <div class="col-md-4"><span>$ 200</span></div>
                             </div>
-                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i>添加至购物车</a>
+                            <a href="${ctx }/cart/shoppingCart" class="btn btn-default"><i class="fa fa-shopping-cart"></i>添加至购物车</a>
                     </div>
                     <div class="product">
                             <a href="product.html"><img src="images/photos/4.jpg" class="img-responsive"></a>
@@ -258,7 +248,7 @@
                                 <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
                                 <div class="col-md-4"><span>$ 200</span></div>
                             </div>
-                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                            <a href="${ctx }/cart/shoppingCart" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
                     </div>
                     <div class="product">
                             <a href="product.html"><img src="images/photos/1.jpg" class="img-responsive"></a>
@@ -266,7 +256,7 @@
                                 <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
                                 <div class="col-md-4"><span>$ 200</span></div>
                             </div>
-                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                            <a href="${ctx }/cart/shoppingCart" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
                     </div>
                     <div class="product">
                             <a href="product.html"><img src="images/photos/2.jpg" class="img-responsive"></a>
@@ -274,7 +264,7 @@
                                 <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
                                 <div class="col-md-4"><span>$ 200</span></div>
                             </div>
-                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                            <a href="${ctx }/cart/shoppingCart" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
                     </div>
                     <div class="product">
                             <a href="product.html"><img src="images/photos/3.jpg" class="img-responsive"></a>
@@ -282,7 +272,7 @@
                                 <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
                                 <div class="col-md-4"><span>$ 200</span></div>
                             </div>
-                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                            <a href="${ctx }/cart/shoppingCart" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
                     </div>
                     <div class="product">
                             <a href="product.html"><img src="images/photos/4.jpg" class="img-responsive"></a>
@@ -290,7 +280,7 @@
                                 <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
                                 <div class="col-md-4"><span>$ 200</span></div>
                             </div>
-                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                            <a href="${ctx }/cart/shoppingCart" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
                     </div>
                     <div class="product">
                             <a href="product.html"><img src="images/photos/2.jpg" class="img-responsive"></a>
@@ -298,7 +288,7 @@
                                 <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
                                 <div class="col-md-4"><span>$ 200</span></div>
                             </div>
-                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                            <a href="${ctx }/cart/shoppingCart" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
                     </div>
             </div>
 </div>

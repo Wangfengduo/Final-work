@@ -57,7 +57,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <h1><a class="navbar-brand logo" href="index.jsp">时尚 </a></h1>
+      <h1><a class="navbar-brand logo" href="../main.jsp">时尚 </a></h1>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -88,8 +88,7 @@
         </div>
       </form>
       <ul class="nav navbar-nav">
-        <li><a href="login.jsp" data-target="#login"><span class="glyphicon glyphicon-user"></span> 登陆</a>
-        <li><a href="register.jsp" data-target="#login"><span class="glyphicon glyphicon-user"></span>  注册</a></li>
+        <li><a><span class="glyphicon glyphicon-user"></span>${lu.realName }</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle cart" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span> 购物车 <span class="cart-counter">3</span> <span class="caret"></span></a>
           <div class="dropdown-menu mini-cart">

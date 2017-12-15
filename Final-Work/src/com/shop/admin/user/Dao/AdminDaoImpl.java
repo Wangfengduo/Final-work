@@ -19,7 +19,7 @@ public class AdminDaoImpl {
 	@SuppressWarnings("unchecked")
 	public Admin loginCheck(String username,String password) {
 		Session session = sessionFactory.getCurrentSession();
-		String sql = "from Admin a where a.admin_username = ? and a.admin_password = ?";
+		String sql = "from Admin a where a.admin_username=? and a.admin_password=?";
 		Query query = session.createQuery(sql);
 		query.setParameter(0, username);
 		query.setParameter(1, password);
