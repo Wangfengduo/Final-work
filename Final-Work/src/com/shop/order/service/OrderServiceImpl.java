@@ -30,11 +30,13 @@ public class OrderServiceImpl {
 	public boolean orderInfo(HttpSession session,HttpServletRequest request) {
 		ArrayList<Product> list=(ArrayList<Product>)session.getAttribute("shoppingList");
 		if(list!=null) {
-			String username=(String) session.getAttribute("username");
-			LoginUser user=loginUserDaoImpl.getSome(username);
+			LoginUser user1=(LoginUser) session.getAttribute("lu");
+			LoginUser user=new LoginUser();
+			user=loginUserDaoImpl.getSome(user1.getLoginName());
+			
 			String telephone=user.getTelephone();
 			String address=user.getAddress();
-			session.setAttribute("username", username);
+			session.setAttribute("username", user.getLoginName());
 			session.setAttribute("telephone", telephone);
 			session.setAttribute("address", address);
 			String[] num = request.getParameterValues("number");
@@ -82,9 +84,9 @@ public class OrderServiceImpl {
 		String orderId = request.getParameter("orderId");
 		int id = Integer.parseInt(orderId);
 		boolean result = orderDaoImpl.changeState(id);
-		return result;
+		return result;       
 	}
-	
+	   
 	public Order select() {
 		Order order = orderDaoImpl.select();
 		return order;

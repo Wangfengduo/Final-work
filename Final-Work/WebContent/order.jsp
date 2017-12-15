@@ -130,17 +130,17 @@
 		        <table class="cart_table" border="1px" height="200px" width="40%" align="center">
 		       		<tr>
 		        		<td align="center">用户名</td>
-		        		<td colspan="3">${username }</td>
+		        		<td colspan="3" align="center">${username}</td>
 		        		
 		        	</tr>
 		        	<tr>
 		        		<td align="center">电话</td>
-		        		<td colspan="3">${telephone }</td>
+		        		<td colspan="3" align="center">${telephone }</td>
 		        		
 		        	</tr>
 		        	<tr>
 		        		<td align="center">地址</td>
-		        		<td colspan="3">${address}</td>
+		        		<td colspan="3" align="center">${address}</td>
 		        		
 		        	</tr>
 		          	<tr>

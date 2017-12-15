@@ -2,77 +2,96 @@ package com.shop.entity;
 
 import java.util.List;
 
+
+
 public class Page<T> {
-		private List<T> list;
-		private int currentPageNum;
-		private int pageSize;
-		private int prePageNum;
-		private int nextPageNum;
-		private int totalPageNum;
-		private int totalCount;
+	private List<Product> list;
+
+    private List<LoginUser> list1;
+    
+    private List<Order> list2;
+    private int totalRecords;
+    private int pageSize;
+    private int pageNo;
+    
+    public int getTotalPages(){
+        return (totalRecords+pageSize-1)/pageSize;
+    }
+    
+
+    public int countOffset(int currentPage,int pageSize){
+        int offset = pageSize*(currentPage-1);
+        return offset;
+    }
+    
+
+    public int getTopPageNo(){
+        return 1;
+    }
+    
+
+    public int getPreviousPageNo(){
+        if(pageNo<=1){
+            return 1;
+        }
+        return pageNo-1;
+    }
+    
+
+    public int getNextPageNo(){
+        if(pageNo>=getBottomPageNo()){
+            return getBottomPageNo();
+        }
+        return pageNo+1;
+    }
+    
+
+    public int getBottomPageNo(){
+        return getTotalPages();
+    }
+    
+    
+    
+    
+	public List<Product> getList() {
+		return list;
+	}
+	public void setList(List<Product> list) {
+		this.list = list;
+	}
+	public List<LoginUser> getList1() {
+		return list1;
+	}
+	public void setList1(List<LoginUser> list1) {
+		this.list1 = list1;
+	}
+	public List<Order> getList2() {
+		return list2;
+	}
+	public void setList2(List<Order> list2) {
+		this.list2 = list2;
+	}
+	public int getTotalRecords() {
+		return totalRecords;
+	}
+	public void setTotalRecords(int totalRecords) {
+		this.totalRecords = totalRecords;
+	}
+	public int getPageSize() {
+		return pageSize;
+	}
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
+	}
+	public int getPageNo() {
+		return pageNo;
+	}
+	public void setPageNo(int pageNo) {
+		this.pageNo = pageNo;
+	}
 		
-		public Page(){}
+    
+    
 		
-		public Page(int pageNum,int pageSize){
-			this.currentPageNum=pageNum;
-			this.pageSize=pageSize;
-		}
-		
-		public List<T> getList() {
-			return list;
-		}
-		public void setList(List<T> list) {
-			this.list = list;
-		}
-		public int getCurrentPageNum() {
-			return currentPageNum;
-		}
-		public void setCurrentPageNum(int currentPageNum) {
-			this.currentPageNum = currentPageNum;
-		}
-		public int getTotalPageNum() {
-			return totalPageNum;
-		}
-		public void setTotalPageNum(int totalPageNum) {
-			this.totalPageNum = totalPageNum;
-		}
-		public int getPrePageNum() {
-			return prePageNum;
-		}
-		public void setPrePageNum(int prePageNum) {
-			this.prePageNum = prePageNum;
-		}
-		public int getNextPageNum() {
-			return nextPageNum;
-		}
-		public void setNextPageNum(int nextPageNum) {
-			this.nextPageNum = nextPageNum;
-		}
-		public int getTotalCount() {
-			return totalCount;
-		}
-		public void setTotalCount(int totalCount) {
-			this.totalCount = totalCount;
-			if(totalCount%pageSize==0)
-				totalPageNum=totalCount/pageSize;
-			else
-				totalPageNum=totalCount/pageSize+1;
-			
-			if(currentPageNum>1)
-				prePageNum=currentPageNum-1;
-			else
-				prePageNum=1;
-			
-			if(currentPageNum<totalPageNum)
-				nextPageNum=currentPageNum+1;
-			else
-				nextPageNum=totalPageNum;
-		}
-		public int getPageSize() {
-			return pageSize;
-		}
-		public void setPageSize(int pageSize) {
-			this.pageSize = pageSize;
-		}
 		
 }

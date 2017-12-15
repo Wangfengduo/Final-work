@@ -33,7 +33,7 @@ public class LoginUserDaoImpl{
 		Query query = session.createQuery(sql);
 		query.setParameter(0, username);
 		List<LoginUser> list = query.list();
-		LoginUser user = null;
+		LoginUser user = new LoginUser();
 		for(LoginUser user1 : list) {
 			user = user1;
 		}

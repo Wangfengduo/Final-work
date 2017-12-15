@@ -27,8 +27,9 @@ public class OrderDaoImpl {
 	
 	public boolean saveOrder(HttpSession session) {
 		Session session1=sessionFactory.getCurrentSession();
-		String username=(String) session.getAttribute("username");
-		LoginUser user=loginUserDaoImpl.findByName(username);
+		LoginUser lu=(LoginUser) session.getAttribute("lu");
+		LoginUser user=new LoginUser();
+		user=loginUserDaoImpl.getSome(lu.getLoginName());
 		Date date = new Date();
 		SimpleDateFormat ft =  new SimpleDateFormat ("yyyy.MM.dd");
 		String Time = ft.format(date);
@@ -46,8 +47,10 @@ public class OrderDaoImpl {
 	@SuppressWarnings("unchecked")
 	public boolean selectOrder(HttpSession session) {
 		Session session1=sessionFactory.getCurrentSession();
-		String username=(String) session.getAttribute("username");
-		LoginUser user=loginUserDaoImpl.getSome(username);
+		LoginUser lu=(LoginUser) session.getAttribute("lu");
+		LoginUser user=new LoginUser();
+		user=loginUserDaoImpl.getSome(lu.getLoginName());
+		
 		String sql="from Order o where o.user=?";
 		Query query = session1.createQuery(sql);
 		query.setParameter(0, user);
@@ -97,6 +100,11 @@ public class OrderDaoImpl {
 		return order;
 	}
 	
+	public Order someOneOrder(Integer id) {
+		Session session = sessionFactory.getCurrentSession();
+		Order order = session.get(Order.class, new Integer(id));
+		return order;
+	}
 	
 	
 }
