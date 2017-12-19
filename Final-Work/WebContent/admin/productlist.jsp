@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>  
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -45,7 +46,7 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
   		<tr>
    		 <td width="90%" align="left" valign="middle">
 	         <form method="post" action="someOneBook.action">
-	         <span>书名：</span>
+	         <span>产品名：</span>
 	         <input type="text" name="bookName" value="根据书名查找" class="text-word" id="textfield" style="color:#999;font-style:italic;" 
 	             onFocus="if (value =='根据书名查找'){value =''}" onBlur="if (value ==''){value='根据书名查找'}">
 	         <input type="submit" value="查询" class="text-but">
@@ -59,19 +60,21 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
     <td align="left" valign="top"> 
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="main-tab">
       <tr>
-         <th align="center" valign="middle" class="borderright">书名</th>
-         <th align="center" valign="middle" class="borderright">价格</th>
-         <th align="center" valign="middle" class="borderright">作者</th>
+         <th align="center" valign="middle" class="borderright">产品名</th>
+         <th align="center" valign="middle" class="borderright">图片</th>
          <th align="center" valign="middle" class="borderright">简介</th>
+         <th align="center" valign="middle" class="borderright">价格</th>
+         <th align="center" valign="middle" class="borderright">产品类型</th>
          <th align="center" valign="middle" class="borderright">操作</th>
       </tr>
-      <c:forEach items="${booklist}" var="book" >
+      <c:forEach items="${list}" var="pd" >
 		 <tr class="bggray" onMouseOut="this.style.backgroundColor='#f9f9f9'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-			<td align="center" valign="middle" class="borderright borderbottom">${book.bookName }</td>
-			<td align="center" valign="middle" class="borderright borderbottom">${book.bookPrice }</td>
-			<td align="center" valign="middle" class="borderright borderbottom">${book.bookAuthor }</td>
-			<td align="center" valign="middle" class="borderright borderbottom">${book.bookDescription }</td>
-			<td align="center" valign="middle" class="borderright borderbottom"><a href="deleteBook.action?bookId=${book.id}">删除</a></td>
+		 	<td align="center" valign="middle" class="borderright borderbottom">${pd.name }</td>
+		 	<td align="center" valign="middle" class="borderright borderbottom">${pd.img}</td>
+		 	<td align="center" valign="middle" class="borderright borderbottom">${pd.description}</td>
+		 	<td align="center" valign="middle" class="borderright borderbottom">${pd.price }</td>
+		 	<td align="center" valign="middle" class="borderright borderbottom">${pd.producttypeid }</td>
+			<td align="center" valign="middle" class="borderright borderbottom"><a href="${ctx}/delete?bookId=${p.id}">删除</a></td>
 		</tr>
 	</c:forEach>
     </table>

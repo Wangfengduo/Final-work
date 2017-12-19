@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+     <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -41,19 +43,19 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
 <!--main_top-->
 <table width="99%" border="0" cellspacing="0" cellpadding="0" id="searchmain">
   <tr>
-    <td width="99%" align="left" valign="top">您的位置：商品管理&nbsp;&nbsp;>&nbsp;&nbsp;修改书籍</td>
+    <td width="99%" align="left" valign="top">您的位置：商品管理&nbsp;&nbsp;>&nbsp;&nbsp;修改商品</td>
   </tr>
   <tr>
     <td align="left" valign="top" id="addinfo">
-    <a href="updateBook.jsp" target="mainFrame" onFocus="this.blur()" class="add">修改书籍</a>
+    <a href="${ctx }/updateProduct.jsp" target="mainFrame" onFocus="this.blur()" class="add">修改商品</a>
     </td>
   </tr>
   <tr>
     <td align="left" valign="top">
-    <form method="post" action="updateBook.action">
+    <form method="post" action="${ctx }/updateBook">
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="main-tab">
       <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-        <td align="right" valign="middle" class="borderright borderbottom bggray">要修改书的编号：</td>
+        <td align="right" valign="middle" class="borderright borderbottom bggray">要修改商品的编号：</td>
         <td align="left" valign="middle" class="borderright borderbottom main-for">
         <input type="text" name="id" value="" class="text-word">
         </td>

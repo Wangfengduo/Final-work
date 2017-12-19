@@ -53,7 +53,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <h1><a class="navbar-brand logo" href="index.html">时尚 </a></h1>
+      <h1><a class="navbar-brand logo" href="main.jsp">时尚 </a></h1>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -63,9 +63,9 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">商品 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="collections.html">男士</a></li>
-            <li><a href="collections.html">女士</a></li>
-            <li><a href="collections.html">礼品</a></li>            
+            <li><a href="list.jsp">男士</a></li>
+            <li><a href="list.jsp">女士</a></li>
+            <li><a href="list.jsp">礼品</a></li>            
           </ul>
         </li>
         <li class="dropdown">
@@ -76,6 +76,7 @@
             <li><a href="contact.html">Contact</a></li>            
           </ul>
         </li>
+        <li><a href="${ctx }/admin/login.jsp">管理员登陆</a></li>
       </ul>
       
       <form class="navbar-form navbar-left searchbar" role="search">
@@ -84,8 +85,8 @@
         </div>
       </form>
       <ul class="nav navbar-nav">
-        <li><a href="Login.jsp" data-target="#login"><span class="glyphicon glyphicon-user"></span> 登录</a>
-        <li><a href="Register.jsp" data-target="#login"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+        <li><a href="login.jsp" data-target="#login"><span class="glyphicon glyphicon-user"></span> 登录</a>
+        <li><a href="register.jsp" data-target="#login"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle cart" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span> 购物车<span class="cart-counter">8</span> <span class="caret"></span></a>
           <div class="dropdown-menu mini-cart">
@@ -133,57 +134,57 @@
 
        <h2 class="title">Collections</h2>
 
-        <div class="breadcrumb"><a href="index.html">主页</a> / 商品</div>
+        <div class="breadcrumb"><a href="index.jsp">主页</a> / 商品</div>
         
        <div class="row">
             <div class="col-sm-2 col-xs-6">
                 <div class="product">
-                            <a href="product.html"><img src="images/photos/6.jpg" class="img-responsive"></a>
+                            <a href="login.jsp"><img src="images/photos/6.jpg" class="img-responsive"></a>
                             <div class="row title-price">
                                 <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
                                 <div class="col-md-4"><span>$ 200</span></div>
                             </div>
-                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                            <a href="login.jsp" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
                 </div>
             </div>
             <div class="col-sm-2 col-xs-6">
                 <div class="product">
-                            <a href="product.html"><img src="images/photos/5.jpg" class="img-responsive"></a>
+                            <a href="login.jsp"><img src="images/photos/5.jpg" class="img-responsive"></a>
                             <div class="row title-price">
                                 <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
                                 <div class="col-md-4"><span>$ 200</span></div>
                             </div>
-                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                            <a href="login.jsp" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
                 </div>
             </div>
             <div class="col-sm-2 col-xs-6">
                 <div class="product">
-                            <a href="product.html"><img src="images/photos/4.jpg" class="img-responsive"></a>
+                            <a href="login.jsp"><img src="images/photos/4.jpg" class="img-responsive"></a>
                             <div class="row title-price">
                                 <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
                                 <div class="col-md-4"><span>$ 200</span></div>
                             </div>
-                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                            <a href="login.jsp" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
                 </div>
             </div>
             <div class="col-sm-2 col-xs-6">
                 <div class="product">
-                            <a href="product.html"><img src="images/photos/3.jpg" class="img-responsive"></a>
+                            <a href="login.jsp"><img src="images/photos/3.jpg" class="img-responsive"></a>
                             <div class="row title-price">
                                 <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
                                 <div class="col-md-4"><span>$ 200</span></div>
                             </div>
-                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                            <a href="login.jsp" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
                 </div>
             </div>
             <div class="col-sm-2 col-xs-6">
                 <div class="product">
-                            <a href="product.html"><img src="images/photos/2.jpg" class="img-responsive"></a>
+                            <a href="login.jsp"><img src="images/photos/2.jpg" class="img-responsive"></a>
                             <div class="row title-price">
                                 <div class="col-md-8"><h5><a href="product.html">Warm Cloths</a></h5></div>
                                 <div class="col-md-4"><span>$ 200</span></div>
                             </div>
-                            <a href="product.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
+                            <a href="login.jsp" class="btn btn-default"><i class="fa fa-shopping-cart"></i> 添加至购物车</a>
                 </div>
             </div>
             

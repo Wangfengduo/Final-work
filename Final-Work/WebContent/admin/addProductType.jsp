@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
+    <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -41,47 +43,24 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
 <!--main_top-->
 <table width="99%" border="0" cellspacing="0" cellpadding="0" id="searchmain">
   <tr>
-    <td width="99%" align="left" valign="top">您的位置：商品管理&nbsp;&nbsp;>&nbsp;&nbsp;添加书籍</td>
+    <td width="99%" align="left" valign="top">您的位置：商品管理&nbsp;&nbsp;>&nbsp;&nbsp;添加类型</td>
   </tr>
   <tr>
     <td align="left" valign="top" id="addinfo">
-    <a href="addBook.jsp" target="mainFrame" onFocus="this.blur()" class="add">新增书籍</a>
+    <a href="addProductType.jsp" target="mainFrame" onFocus="this.blur()" class="add">添加类型</a>
     </td>
   </tr>
   <tr>
     <td align="left" valign="top">
-    <form method="post" action="addBook.action">
+    <form method="post" action="${ctx }/addProductType">
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="main-tab">
       <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-        <td align="right" valign="middle" class="borderright borderbottom bggray">书名：</td>
+        <td align="right" valign="middle" class="borderright borderbottom bggray">类型名：</td>
         <td align="left" valign="middle" class="borderright borderbottom main-for">
-        <input type="text" name="bookName" value="" class="text-word">
+        <input type="text" name="name" value="" class="text-word">
         </td>
       </tr>
-      <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-        <td align="right" valign="middle" class="borderright borderbottom bggray">价格：</td>
-        <td align="left" valign="middle" class="borderright borderbottom main-for">
-        <input type="text" name="bookPrice" value="" class="text-word">
-        </td>
-      </tr>
-      <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-        <td align="right" valign="middle" class="borderright borderbottom bggray">作者：</td>
-        <td align="left" valign="middle" class="borderright borderbottom main-for">
-        <input type="text" name="bookAuthor" value="" class="text-word">
-        </td>
-      </tr>
-      <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-        <td align="right" valign="middle" class="borderright borderbottom bggray">描述：</td>
-        <td align="left" valign="middle" class="borderright borderbottom main-for">
-        <input type="text" name="bookDescription" value="" class="text-word">
-        </td>
-      </tr>
-      <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-        <td align="right" valign="middle" class="borderright borderbottom bggray">类型：</td>
-        <td align="left" valign="middle" class="borderright borderbottom main-for">
-        <input type="text" name="type_id" value="" class="text-word">
-        </td>
-      </tr>
+     
       <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
         <td align="right" valign="middle" class="borderright borderbottom bggray">&nbsp;</td>
         <td align="left" valign="middle" class="borderright borderbottom main-for">

@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ include file="/admin/common/path.jsp" %>
 <%@ include file="/common/taglibs.jsp" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -263,7 +265,7 @@ function checkForm(){
   <section class="container">
     <div class="login">
       <h1>管理员登录</h1>
-      <form method="post" action="${basePath }/admin/loginCheck.action" method="post" onsubmit="return checkForm();">
+      <form method="post" action="${ctx }/admin/loginCheck" method="post" onsubmit="return checkForm();">
         <p><input type="text" name="username" id="adminName" value="" placeholder="用户名"></p>
         <p><input type="password" name="password" id="password" value="" placeholder="密码"></p>
         <p><input type="text" name="verification" id="verification" value="" placeholder="验证码"></p>

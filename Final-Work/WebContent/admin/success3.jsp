@@ -8,8 +8,8 @@
 </head>
 <body>
 <script type="text/javascript">
-	alert("书籍修改成功!");
-	window.document.location.href="updateBook.jsp";
+	alert("商品修改成功!");
+	window.document.location.href="updateProduct.jsp";
 </script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+<c:set var="ctx" value="${pageContext.request.contextPath}" /> 
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -44,7 +45,7 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="search">
   		<tr>
    		 <td width="90%" align="left" valign="middle">
-	         <form method="post" action="someOneOrder.action">
+	         <form method="post" action="${ctx }/someOneOrder">
 	         <span>订单号：</span>
 	         <input type="text" name="orderId" value="根据订单号查询" class="text-word" id="textfield" style="color:#999;font-style:italic;" 
 	             onFocus="if (value =='根据订单号查询'){value =''}" onBlur="if (value ==''){value='根据订单号查询'}">

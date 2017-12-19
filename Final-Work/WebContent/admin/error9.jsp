@@ -9,7 +9,7 @@
 <body>
 <script type="text/javascript">
 	alert("没有该书所属类型!");
-	window.document.location.href="addBook.jsp";
+	window.document.location.href="addProduct.jsp";
 </script>
 </body>
 </html>

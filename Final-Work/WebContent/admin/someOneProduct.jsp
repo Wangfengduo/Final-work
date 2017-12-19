@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
+    <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -44,7 +45,7 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="search">
   		<tr>
    		 <td width="90%" align="left" valign="middle">
-	         <form method="post" action="someOneBook.action">
+	         <form method="post" action="${ctx }/someOneBook">
 	         <span>书名：</span>
 	         <input type="text" name="bookName" value="根据书名查询" class="text-word" id="textfield" style="color:#999;font-style:italic;" 
 	             onFocus="if (value =='根据书名查询'){value =''}" onBlur="if (value ==''){value='根据书名查询'}">
@@ -61,26 +62,26 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="main-tab">
       <tr>
          <td align="center" valign="middle" class="borderright">编号</td>
-         <td align="center" valign="middle" class="borderright">书名</td>
-         <td align="center" valign="middle" class="borderright">价格</td>
-         <td align="center" valign="middle" class="borderright">作者</td>
+         <td align="center" valign="middle" class="borderright">商品名</td>
+         <td align="center" valign="middle" class="borderright">图片</td>
          <td align="center" valign="middle" class="borderright">简介</td>
+         <td align="center" valign="middle" class="borderright">价格</td>
          <td align="center" valign="middle" class="borderright">操作</td>
       </tr>
       <tr class="bggray" onMouseOut="this.style.backgroundColor='#f9f9f9'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-        <td align="center" valign="middle" class="borderright borderbottom">${book.id }</td>
-        <td align="center" valign="middle" class="borderright borderbottom">${book.bookName }</td>
-        <td align="center" valign="middle" class="borderright borderbottom">${book.bookPrice }</td>
-        <td align="center" valign="middle" class="borderright borderbottom">${book.bookAuthor }</td>
-        <td align="center" valign="middle" class="borderright borderbottom">${book.bookDescription }</td>
-        <td align="center" valign="middle" class="borderbottom"><a href="deleteBook.action?bookId=${book.id}">删除</a></td>
+        <td align="center" valign="middle" class="borderright borderbottom">${pd.id }</td>
+        <td align="center" valign="middle" class="borderright borderbottom">${pd.name }</td>
+        <td align="center" valign="middle" class="borderright borderbottom">${pd.img}</td>
+        <td align="center" valign="middle" class="borderright borderbottom">${pd.description}</td>
+        <td align="center" valign="middle" class="borderright borderbottom">${pd.price }</td>
+        <td align="center" valign="middle" class="borderbottom"><a href="${ctx }/deleteProduct?productId=${pd.id}">删除</a></td>
       </tr>
     </table> 
     </td>
  </tr>
     <tr>
        <td width="90%" colspan="6" valign="middle">
-         <form method="post" action="booklist.action">
+         <form method="post" action="${ctx }/productlist">
          <input style="display:block;margin:0 auto;height:30px;width:80px;" type=submit value="返回" class="text-but">
          </form>
        </td>

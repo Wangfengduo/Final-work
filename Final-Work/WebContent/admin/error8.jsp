@@ -9,7 +9,7 @@
 <body>
 <script type="text/javascript">
 	alert("该书已经在商店!");
-	window.document.location.href="addBook.jsp";
+	window.document.location.href="addProduct.jsp";
 </script>
 </body>
 </html>

@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ include file="/admin/common/path.jsp" %>
 <%@ include file="/common/taglibs.jsp" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -233,7 +235,7 @@ input[type=submit]:active {
   <section class="container">
     <div class="login">
       <h1>修改密码</h1>
-      <form method="post" action="${basePath }/admin/changePwd.action" method="post" onsubmit="return checkForm();">
+      <form method="post" action="${ctx }/admin/changePwd" method="post" onsubmit="return checkForm();">
         <p><input type="password" name="password" value="" placeholder="原密码"></p>
         <p><input type="password" name="newpassword" value="" placeholder="新密码"></p>
         <p><input type="password" name="newpwd" value="" placeholder="确认密码"></p>

@@ -8,8 +8,8 @@
 </head>
 <body>
 <script type="text/javascript">
-	alert("书籍添加成功!");
-	window.document.location.href="addBook.jsp";
+	alert("商品添加成功!");
+	window.document.location.href="addProduct.jsp";
 </script>
 </body>
 </html>

@@ -9,7 +9,7 @@
 <body>
 <script type="text/javascript">
 	alert("类型添加成功!");
-	window.document.location.href="addBookType.jsp";
+	window.document.location.href="addProductType.jsp";
 </script>
 </body>
 </html>

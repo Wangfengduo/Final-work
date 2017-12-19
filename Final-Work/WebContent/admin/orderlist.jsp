@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>  
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -44,7 +45,7 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="search">
   		<tr>
    		 <td width="90%" align="left" valign="middle">
-	         <form method="post" action="someOneOrder.action">
+	         <form method="post" action="${ctx }/someOneOrder">
 	         <span>订单号：</span>
 	         <input type="text" name="orderId" value="根据订单号查询" class="text-word" id="textfield" style="color:#999;font-style:italic;" 
 	             onFocus="if (value =='根据订单号查询'){value =''}" onBlur="if (value ==''){value='根据订单号查询'}">
@@ -71,7 +72,7 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
 			<td align="center" valign="middle" class="borderright borderbottom">${order.user.id }</td>
 			<td align="center" valign="middle" class="borderright borderbottom">${order.orderTime }</td>
 			<td align="center" valign="middle" class="borderright borderbottom">${order.orderState }</td>
-			<td align="center" valign="middle" class="borderright borderbottom"> <a href="showOrder.action?orderId=${order.orderId}">详情</a><span class="gray">&nbsp;|&nbsp;</span><a href="deleteOrder.action?orderId=${order.orderId}">删除</a></td>
+			<td align="center" valign="middle" class="borderright borderbottom"> <a href="${ctx }/showOrder?orderId=${order.orderId}">详情</a><span class="gray">&nbsp;|&nbsp;</span><a href="deleteOrder.action?orderId=${order.orderId}">删除</a></td>
 		</tr>
 	</c:forEach>
     </table>
@@ -82,7 +83,7 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
         <a href="orderlist.action?pageNo=${page.topPageNo }"><input type="button" name="fristPage" value="首页" /></a>
         <c:choose>
           <c:when test="${page.pageNo!=1}">          
-              <a href="orderlist.action?pageNo=${page.previousPageNo }"><input type="button" name="previousPage" value="上一页" /></a>        
+              <a href="${ctx }/orderlist?pageNo=${page.previousPageNo }"><input type="button" name="previousPage" value="上一页" /></a>        
           </c:when>
           <c:otherwise>         
               <input type="button" disabled="disabled" name="previousPage" value="上一页" />          
@@ -90,13 +91,13 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
         </c:choose>
         <c:choose>
           <c:when test="${page.pageNo != page.totalPages}">
-            <a href="orderlist.action?pageNo=${page.nextPageNo }"><input type="button" name="nextPage" value="下一页" /></a>
+            <a href="${ctx }/orderlist?pageNo=${page.nextPageNo }"><input type="button" name="nextPage" value="下一页" /></a>
           </c:when>
           <c:otherwise>           
               <input type="button" disabled="disabled" name="nextPage" value="下一页" />            
           </c:otherwise>
         </c:choose>
-        <a href="orderlist.action?pageNo=${page.bottomPageNo }"><input type="button" name="lastPage" value="尾页" /></a>
+        <a href="${ctx }/orderlist?pageNo=${page.bottomPageNo }"><input type="button" name="lastPage" value="尾页" /></a>
     </td>
     </tr>
 </table>

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,7 +80,7 @@
             <li><a href="contact.html">Contact</a></li>            
           </ul>
         </li>
-        <li><a href="../admin/login.jsp">管理员登陆</a></li>    
+        <li><a href="${ctx }/admin/login.jsp">管理员登陆</a></li>    
       </ul>
       
       <form class="navbar-form navbar-left searchbar" role="search">

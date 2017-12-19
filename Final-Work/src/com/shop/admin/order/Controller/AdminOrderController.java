@@ -36,7 +36,7 @@ public class AdminOrderController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "admin/orderlist";
+        return "orderlist";
     }
 	
 	

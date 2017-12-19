@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
+    <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,7 +31,7 @@ body{overflow-x:hidden; background:url(images/main/leftbg.jpg) left top repeat-y
     <div style="float: left" id="my_menu" class="sdmenu">
       <div>
         <span>用户管理</span>
-        <a href="userInfo.action" target="mainFrame" onFocus="this.blur()">查看用户</a>
+        <a href="userInfo" target="mainFrame" onFocus="this.blur()">查看用户</a>
       </div>
       <div>
         <span>管理员维护</span>
@@ -38,16 +40,16 @@ body{overflow-x:hidden; background:url(images/main/leftbg.jpg) left top repeat-y
       </div>
       <div>
         <span>商品管理</span>
-        <a href="booklist.action" target="mainFrame" onFocus="this.blur()">商品列表</a>
-        <a href="addBook.jsp" target="mainFrame" onFocus="this.blur()">添加商品</a>
-        <a href="updateBook.jsp" target="mainFrame" onFocus="this.blur()">修改商品</a>
-        <a href="addBookType.jsp" target="mainFrame" onFocus="this.blur()">添加类型</a>
+        <a href="${ctx }/admin/productlist" target="mainFrame" onFocus="this.blur()">商品列表</a>
+        <a href="addProduct.jsp" target="mainFrame" onFocus="this.blur()">添加商品</a>
+        <a href="updateProduct.jsp" target="mainFrame" onFocus="this.blur()">修改商品</a>
+        <a href="addProductType.jsp" target="mainFrame" onFocus="this.blur()">添加类型</a>
       </div>
       <div>
         <span>订单管理</span>
-        <a href="finishOrder.action" target="mainFrame" onFocus="this.blur()">已支付订单</a>
-        <a href="deleteOrderList.action" target="mainFrame" onFocus="this.blur()">用户删除的订单</a>
-        <a href="orderlist.action" target="mainFrame" onFocus="this.blur()">查看所有订单</a>
+        <a href="${ctx }/admin/finishOrder" target="mainFrame" onFocus="this.blur()">已支付订单</a>
+        <a href="${ctx }/admin/deleteOrderList" target="mainFrame" onFocus="this.blur()">用户删除的订单</a>
+        <a href="${ctx }/admin/orderlist" target="mainFrame" onFocus="this.blur()">查看所有订单</a>
       </div>
         
     </div>
